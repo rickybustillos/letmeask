@@ -1,3 +1,5 @@
+@import './_variables.scss';
+
 #page-auth {
   display: flex;
   align-items: stretch;
@@ -5,8 +7,8 @@
 
   aside {
     flex: 6;
-    background: #835afd;
-    color: #fff;
+    background: $primary;
+    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +26,7 @@
       font-size: 24px;
       line-height: 32px;
       margin-top: 16px;
-      color: #f8f8f8;
+      color: $white;
     }
   }
 
@@ -59,8 +61,8 @@
         height: 50px;
         border-radius: 8px;
         padding: 0 16px;
-        background: #fff;
-        border: 1px solid #a8a8b3;
+        background: $white;
+        border: 1px solid $light;
       }
       button {
         margin-top: 16px;
@@ -73,11 +75,11 @@
 
     p {
       font-size: 14px;
-      color: #737380;
+      color: $muted;
       margin-top: 16px;
 
       a {
-        color: #e559f9;
+        color: $secondary;
       }
     }
   }
@@ -86,8 +88,8 @@
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #ea4335;
-    color: #fff;
+    background: $google-color;
+    color: $white;
 
     display: flex;
     justify-content: center;
@@ -108,7 +110,7 @@
   }
   .separator {
     font-size: 14px;
-    color: #a8a8b3;
+    color: $light;
     margin: 32px 0;
     display: flex;
     align-items: center;
@@ -117,7 +119,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: $light;
       margin-right: 16px;
     }
 
@@ -125,7 +127,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: $light;
       margin-left: 16px;
     }
   }
