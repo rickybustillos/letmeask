@@ -1,13 +1,16 @@
+import './styles.scss';
+
 import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 
-import logoImg from '../assets/images/logo.svg';
-import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
-import { database } from '../services/firebase';
+import logoImg from '../../assets/images/logo.svg';
 
-import '../styles/room.scss';
+import { database } from '../../services/firebase';
+
+import { Button } from '../../components/Button';
+import { RoomCode } from '../../components/RoomCode';
+
 
 type FirebaseQuestions = Record<string, {
   author: {
@@ -40,7 +43,6 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState('');
   const [questions, setQuestions] = useState<Question[]>([])
   const [title, setTitle] = useState('');
-
 
   const roomId = params.id;
 
@@ -105,7 +107,7 @@ export function Room() {
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
-          { questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
         <form onSubmit={handleSendQuestion}>
@@ -116,19 +118,19 @@ export function Room() {
           />
 
           <div className="form-footer">
-            { user ? (
-                <div className="user-info">
-                  <img src={user.avatar} alt={user.name} />
-                  <span>{user.name}</span>
-                </div>
-              ) : (
+            {user ? (
+              <div className="user-info">
+                <img src={user.avatar} alt={user.name} />
+                <span>{user.name}</span>
+              </div>
+            ) : (
               <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
-              ) }
+            )}
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
         </form>
 
-        {JSON.stringify}
+
       </main>
     </div>
   );
