@@ -36,5 +36,34 @@
         font-size: 14px;
       }
     }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: $muted;
+
+        svg {
+          margin: 0 4px;
+        }
+
+        &.liked {
+          color: $primary;
+
+          svg path {
+            stroke: $primary;
+          }
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   }
 }
