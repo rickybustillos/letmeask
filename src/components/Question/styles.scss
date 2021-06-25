@@ -10,6 +10,20 @@
     margin-top: 8px;
   } 
 
+  &.highlighted {
+    background: $primary-light;
+    border: 1px solid $primary;
+  }
+
+  &.answered {
+    background: $lighter-1;
+
+    p {
+      color: $muted;
+    }
+
+  }
+
   p {
     color: $dark;
   }
@@ -35,6 +49,11 @@
         color: $muted;
         font-size: 14px;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
     }
 
     button {
